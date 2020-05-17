@@ -1,0 +1,38 @@
+.div1 {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  border: 1px solid transparent;
+  margin: 5px;
+}
+
+.div2 {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  height: 84px;
+  width: 84px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+}
+.div2:before,
+.div2:after {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  background: #fff;
+  content: "";
+}
+.div2:before {
+  top: 0;
+  left: 0;
+}
+.div2:after {
+  bottom: 0;
+  right: 0;
+}
+.div1:hover {
+  border: 1px solid red;
+}
