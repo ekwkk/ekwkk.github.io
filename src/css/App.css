@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  margin: 1%;
 }
 
 .Main {
@@ -48,4 +48,18 @@ u {
   border-bottom: 10px solid orange;
   line-height: 50px;
   margin: 20px 0;
+}
+
+.Projects {
+  display: flex;
+  flex-direction: row;
+}
+
+.ProjectLegend {
+  width: 50%;
+  order: 1;
+}
+
+.ProjectColumns {
+  order: 2;
 }

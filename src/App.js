@@ -1,14 +1,17 @@
 import React from "react";
 // Components
+import CardColumns from "react-bootstrap/CardColumns";
 import Nav from "react-bootstrap/Nav";
-import Project from "./Project";
+import Project from "./ProjectCard";
 // Style sheets
 import "./css/App.css";
 import "bootstrap/dist/css/bootstrap.css";
 // Static imports
 import dot from "./images/dot.png";
-import face from "./images/face.png";
 import email from "./images/envelopes.png";
+import face from "./images/face.png";
+import java from "./images/java.png";
+import python from "./images/python.png";
 
 function App() {
   return (
@@ -44,11 +47,57 @@ function App() {
       </div>
 
       {/* Project page */}
+      <h4 style={{ textAlign: "center" }}>
+        <u>projects</u>
+      </h4>
       <div className='Projects'>
-        <h4>
-          <u>projects</u>
-          <Project></Project>
-        </h4>
+        <div className='ProjectLegend'>
+          <Nav
+            defaultActiveKey='/home'
+            className='flex-column'
+            style={{
+              border: "1px solid rgba(0, 0, 0, 0.25)",
+              borderRadius: "0.25rem",
+            }}
+          >
+            <Nav.Link eventKey='disabled' disabled>
+              Legend
+            </Nav.Link>
+            <Nav.Link onMouseEnter={() => console.log("hi")}>
+              <img
+                src={python}
+                alt='python'
+                width='20%'
+                style={{ marginRight: "5px" }}
+              />
+              Python
+            </Nav.Link>
+            <Nav.Link>
+              <img
+                src={java}
+                alt='java'
+                width='20%'
+                style={{ marginRight: "5px" }}
+              />
+              Java
+            </Nav.Link>
+            <Nav.Link eventKey='disabled' disabled>
+              Disabled
+            </Nav.Link>
+          </Nav>
+        </div>
+        <div className='ProjectColumns'>
+          <CardColumns>
+            <Project></Project>
+            <Project></Project>
+            <Project></Project>
+            <Project></Project>
+            <Project></Project>
+            <Project></Project>
+            <Project></Project>
+            <Project></Project>
+          </CardColumns>
+        </div>
       </div>
     </div>
   );
