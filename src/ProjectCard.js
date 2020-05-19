@@ -10,10 +10,23 @@ import eg from "./images/asteriods.png";
 import java from "./images/java.png";
 import python from "./images/python.png";
 
-function Project() {
+function Project(props) {
+  const [cardStyle, changeCardStyle] = React.useState({
+    width: "80%",
+    border: "none",
+    opacity: "1",
+  });
+
+  React.useEffect(() => {
+    (props.languages && props.languages.includes(props.languageSelected)) ||
+    props.languageSelected === ""
+      ? changeCardStyle({ width: "80%", border: "none", opacity: "1" })
+      : changeCardStyle({ width: "80%", border: "none", opacity: "0.1" });
+  }, [props.languageSelected, props.languages]);
+
   return (
     <div className='ProjectCard'>
-      <Card style={{ width: "80%", border: "none" }}>
+      <Card style={cardStyle}>
         <div id='frameTop'>
           <img src={frameTop} alt='frame' width='8%' />
         </div>

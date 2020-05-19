@@ -1,0 +1,75 @@
+@font-face {
+  font-family: ModerneSans;
+  src: url(ModerneSansFont.ttf);
+}
+
+.App {
+  font-family: "Nunito", sans-serif;
+}
+
+.Main {
+  display: flex;
+  flex-direction: row;
+  background-image: url("../images/background.PNG");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.Profile {
+  display: flex;
+  flex-direction: column;
+  margin: 0% 3% 5% 3%;
+  background-color: rgba($color: #ffc569, $alpha: 0.85);
+  border-radius: 10%;
+  width: 43%;
+}
+
+.Profile #face {
+  border-radius: 100%;
+  max-width: 40%;
+  max-height: 100%;
+  margin: 12% auto;
+  order: 1;
+}
+
+.Contact {
+  order: 2;
+  margin: 0% 18% 12% 18%;
+}
+
+.Projects {
+  display: flex;
+  flex-direction: row;
+}
+
+.ProjectLegend {
+  width: 50%;
+  order: 1;
+}
+
+.ProjectColumns {
+  order: 2;
+}
+
+.underline--magical {
+  font-family: ModerneSans;
+  font-size: 4rem;
+
+  background-image: linear-gradient(120deg, #ff9a9e 0%, #fad0c4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+
+  &:hover {
+    background-size: 100% 88%;
+  }
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: gray;
+}
