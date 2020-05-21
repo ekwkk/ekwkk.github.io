@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import email from "./images/envelopes.png";
 import face from "./images/face.png";
 import github from "./images/github.svg";
+import linkedin from "./images/linkedin.png";
 import resume from "./static/resume.pdf";
 
 function App() {
@@ -72,32 +73,19 @@ function App() {
       <Navbar style={{ backgroundColor: "#ffd100" }}>
         <Navbar.Brand>
           <h4>
-            HELLO! I'M{" "}
-            <span className='underline--magical' style={{ fontSize: "1.5rem" }}>
-              ERICA
-            </span>
+            HELLO! I'M <span className='underline--magical navtext'>ERICA</span>
           </h4>
         </Navbar.Brand>
         <Nav className='ml-auto'>
           <Nav.Item>
-            <Scrollchor to='projects' className='nav-link'>
-              <span
-                className='underline--magical'
-                style={{ fontSize: "1.5rem" }}
-              >
-                projects
-              </span>
-            </Scrollchor>
+            <Nav.Link href={resume} target='_blank'>
+              <span className='underline--magical navtext'>resume</span>
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link href={resume} target='_blank'>
-              <span
-                className='underline--magical'
-                style={{ fontSize: "1.5rem" }}
-              >
-                resume
-              </span>
-            </Nav.Link>
+            <Scrollchor to='projects' className='nav-link'>
+              <span className='underline--magical navtext'>projects</span>
+            </Scrollchor>
           </Nav.Item>
         </Nav>
       </Navbar>
@@ -167,7 +155,24 @@ function App() {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                github.com/ekwkk
+                github/ekwkk
+              </a>
+            </div>
+            <div>
+              <img
+                src={linkedin}
+                alt='linkedin'
+                style={{
+                  height: "auto",
+                  margin: "0px 10px 5px 0px",
+                }}
+              />
+              <a
+                href='https://www.linkedin.com/in/erica-kong-085169a1/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                linkedin/erica-kong
               </a>
             </div>
           </div>
@@ -264,6 +269,16 @@ function App() {
           </CardColumns>
         </div>
       </div>
+      <footer>
+        <span role='img' aria-label='c'>
+          ©
+        </span>{" "}
+        2020 Made in React and with{" "}
+        <span role='img' aria-label='star'>
+          🌸
+        </span>{" "}
+        by Erica Kong
+      </footer>
     </div>
   );
 }
