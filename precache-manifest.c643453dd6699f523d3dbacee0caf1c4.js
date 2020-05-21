@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae98fa09193c229d2bbe0c3c1815c90f",
+    "revision": "c9976972889df618b0593477642fe6de",
     "url": "/index.html"
   },
   {
-    "revision": "a5b36397fe078afb5d4d",
+    "revision": "43ad8dc4543c5ccf64b6",
     "url": "/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "f0218b2cbce8f08a13aa",
-    "url": "/static/css/main.225153d4.chunk.css"
+    "revision": "b0c9a7079eff0d1dbde4",
+    "url": "/static/css/main.c514717d.chunk.css"
   },
   {
-    "revision": "a5b36397fe078afb5d4d",
-    "url": "/static/js/2.308bcf10.chunk.js"
+    "revision": "43ad8dc4543c5ccf64b6",
+    "url": "/static/js/2.5b05f4ca.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/static/js/2.308bcf10.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.5b05f4ca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f0218b2cbce8f08a13aa",
-    "url": "/static/js/main.3697145a.chunk.js"
+    "revision": "b0c9a7079eff0d1dbde4",
+    "url": "/static/js/main.abc3c9ed.chunk.js"
   },
   {
     "revision": "c815442ab336b747f527",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/asteriods.39dceacc.png"
   },
   {
-    "revision": "38325c8f015f31ccf3f0544759c33794",
-    "url": "/static/media/background.38325c8f.PNG"
+    "revision": "59d5cd58217d9a1453783c9811f598a4",
+    "url": "/static/media/background.59d5cd58.JPG"
   },
   {
     "revision": "c01f726812208aa5e9906ad176081581",
@@ -88,6 +88,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/minesweeper.94d3df8f.gif"
   },
   {
+    "revision": "16ddab2ee3bcd9e22d96f267e473a2f4",
+    "url": "/static/media/mnist.16ddab2e.png"
+  },
+  {
     "revision": "38d37b806bca241ac268e1612e87b44f",
     "url": "/static/media/netskope.38d37b80.png"
   },
@@ -104,8 +108,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/resume.0eccc248.pdf"
   },
   {
+    "revision": "7122a6188c77a6bc16cc21012d3d0bbc",
+    "url": "/static/media/spamham.7122a618.png"
+  },
+  {
     "revision": "1d234b709e88699f5ae9f2318f6577a2",
     "url": "/static/media/top.1d234b70.svg"
+  },
+  {
+    "revision": "ae68f4cca4f2da8d67bf116741fe70e6",
+    "url": "/static/media/vimeotab.ae68f4cc.png"
   },
   {
     "revision": "2e19f840536a6c4c4b05e2d25e801c97",
