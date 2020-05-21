@@ -14,9 +14,12 @@ function Project(props) {
     opacity: "1",
   });
 
+  const [cardImgStyle, changeCardImgStyle] = React.useState({});
+
   const [descriptionStyle, changeDescriptionStyle] = React.useState({
-    margin: "4% 10%",
+    margin: "3% 9%",
     visibility: "hidden",
+    width: "100%",
   });
 
   const [languageIcons, changeLanguageIcons] = React.useState([]);
@@ -43,18 +46,28 @@ function Project(props) {
   return (
     <div
       className='ProjectCard'
-      onMouseEnter={() =>
-        changeDescriptionStyle({ margin: "4% 10%", visibility: "visible" })
-      }
-      onMouseLeave={() =>
-        changeDescriptionStyle({ margin: "4% 10%", visibility: "hidden" })
-      }
+      onMouseEnter={() => {
+        changeDescriptionStyle({
+          margin: "3% 9%",
+          visibility: "visible",
+          width: "100%",
+        });
+        changeCardImgStyle({ opacity: 0.2 });
+      }}
+      onMouseLeave={() => {
+        changeDescriptionStyle({
+          margin: "3% 9%",
+          visibility: "hidden",
+          width: "100%",
+        });
+        changeCardImgStyle({ opacity: 1 });
+      }}
     >
       <Card style={cardStyle}>
         <div id='frameTop'>
           <img src={frameTop} alt='frame' width='8%' />
         </div>
-        <Card.Img src={require("./images/" + props.img)} />
+        <Card.Img src={require("./images/" + props.img)} style={cardImgStyle} />
         <Card.ImgOverlay style={descriptionStyle}>
           <Card.Title>{props.cardTitle}</Card.Title>
           <Card.Text>{props.cardText}</Card.Text>

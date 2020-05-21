@@ -9,25 +9,67 @@ import Scrollchor from "react-scrollchor";
 import "./css/App.scss";
 import "bootstrap/dist/css/bootstrap.css";
 // Static imports
-import database from "./images/database.png";
-import django from "./images/django.png";
-import ds from "./images/ds.png";
 import email from "./images/envelopes.png";
 import face from "./images/face.png";
 import github from "./images/github.svg";
-import java from "./images/java.png";
-import python from "./images/python.png";
-import react from "./images/react.png";
 import resume from "./static/resume.pdf";
-import webdev from "./images/webdev.png";
 
 function App() {
   const [languageSelected, changeLanguageSelected] = React.useState("");
+  const legendDescription = [
+    "Python",
+    "Java",
+    "React",
+    "Heroku, AWS",
+    "Django",
+    "Data Science",
+    "mongoDB, PostgreSQL",
+  ];
+  const legends = [
+    "python",
+    "java",
+    "react",
+    "webdev",
+    "django",
+    "ds",
+    "database",
+  ];
+  const legendSpans = legends.map((legend, i) => (
+    <span
+      onMouseEnter={() => changeLanguageSelected(legend)}
+      onMouseLeave={() => changeLanguageSelected("")}
+      key={legend}
+    >
+      <img
+        src={require("./images/" + legend + ".png")}
+        alt={legend}
+        width='5%'
+        style={{ margin: "0% 1%" }}
+      />
+      {legendDescription[i]}
+    </span>
+  ));
+
+  const legendNavLinks = legends.map((legend, i) => (
+    <Nav.Link
+      onMouseEnter={() => changeLanguageSelected(legend)}
+      onMouseLeave={() => changeLanguageSelected("")}
+      key={legend}
+    >
+      <img
+        src={require("./images/" + legend + ".png")}
+        alt={legend}
+        width='20%'
+        style={{ marginRight: "5px" }}
+      />
+      {legendDescription[i]}
+    </Nav.Link>
+  ));
 
   return (
     <div className='App'>
       {/* Navbar */}
-      <Navbar style={{ backgroundColor: "#fdfad8" }}>
+      <Navbar style={{ backgroundColor: "#ffd100" }}>
         <Navbar.Brand>
           <h4>
             HELLO! I'M{" "}
@@ -66,38 +108,14 @@ function App() {
         <div className='Profile'>
           <img src={face} alt='face' id='face' />
           <div className='Contact'>
-            <div>
-              <img
-                src={email}
-                alt='email'
-                style={{
-                  width: "10%",
-                  height: "auto",
-                  margin: "0px 5px 5px 0px",
-                }}
-              />{" "}
-              waikeikong @ berkeley . edu
-            </div>
-            <div>
-              <img
-                src={github}
-                alt='github'
-                style={{
-                  width: "10%",
-                  height: "auto",
-                  margin: "0px 10px 5px 0px",
-                }}
-              />
-              <a href='https://github.com/ekwkk'>github.com/ekwkk</a>
-            </div>
             <p>
               Hi! I'm a 4th-year studying Computer Science and Data Science at
               UC Berkeley, and I'm from the foggy San Francisco{" "}
               <span role='img' aria-label='star'>
                 💨
               </span>
-              . I'm interested in working with ML/data and on full-stack dev
-              with a concentration in backend!{" "}
+              . I'm interested in working with ML + data-driven projects and on
+              full-stack dev with a concentration in backend!{" "}
             </p>
             <p>
               In my free time, I like to explore museums and take pictures of
@@ -105,7 +123,8 @@ function App() {
               <span role='img' aria-label='star'>
                 🌉
               </span>{" "}
-              and learn about new technologies.
+              , learn about new technologies, contribute back to my community by
+              teaching.
             </p>
             <p>
               <span role='img' aria-label='star'>
@@ -122,152 +141,125 @@ function App() {
               Proficient with Go, AWS, Node.js, Heroku, Google Cloud API, REST,
               Webpack.
             </p>
+            <p>Let's get in touch!</p>
+            <div>
+              <img
+                src={email}
+                alt='email'
+                style={{
+                  height: "auto",
+                  margin: "0px 5px 5px 0px",
+                }}
+              />{" "}
+              waikeikong @ berkeley . edu
+            </div>
+            <div>
+              <img
+                src={github}
+                alt='github'
+                style={{
+                  height: "auto",
+                  margin: "0px 10px 5px 0px",
+                }}
+              />
+              <a
+                href='https://github.com/ekwkk'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                github.com/ekwkk
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Project page */}
       <h4 style={{ textAlign: "center", margin: "0% 0% 2% 0%" }} id='projects'>
-        <span className='underline--magical'>sample projects</span>
+        <span className='underline--magical'>projects</span>
       </h4>
-      <p>
+      <p style={{ textAlign: "center" }}>
         <i>hover over projects for descriptions!</i>
       </p>
       <div className='Projects'>
         <div className='ProjectLegend'>
           <Nav
             defaultActiveKey='/home'
-            className='flex-column'
             style={{
               border: "1px solid rgba(0, 0, 0, 0.25)",
               borderRadius: "0.25rem",
             }}
           >
             <Nav.Link eventKey='disabled' disabled>
-              <i>Hover over!</i>
+              <i>Hover over below!</i>
             </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("python")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={python}
-                alt='python'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              Python
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("java")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={java}
-                alt='java'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              Java
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("react")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={react}
-                alt='react'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              React
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("webdev")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={webdev}
-                alt='webdev'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              Heroku, AWS
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("django")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={django}
-                alt='django'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              Django
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("database")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={database}
-                alt='database'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              mongoDB, mySQL
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => changeLanguageSelected("ds")}
-              onMouseLeave={() => changeLanguageSelected("")}
-            >
-              <img
-                src={ds}
-                alt='ds'
-                width='20%'
-                style={{ marginRight: "5px" }}
-              />
-              Data Science
-            </Nav.Link>
+            {legendNavLinks}
           </Nav>
         </div>
+
+        <div className='ProjectLegend2' style={{ textAlign: "center" }}>
+          <span>
+            <i>Click! >></i>
+          </span>
+          {legendSpans}
+        </div>
+
         <div className='ProjectColumns'>
           <CardColumns>
             <Project
               languages={["webdev", "react", "ds", "django", "database"]}
               languageSelected={languageSelected}
               img='netskope.png'
+              cardText='Analyzed 100k JSON files to train and predict which fields should be combined. Created a React frontend, Django backend, mongoDB webapp hosted on Heroku.'
             ></Project>
             <Project
-              languages={["webdev", "react", "database"]}
+              languages={["webdev", "react", "database", "django"]}
               languageSelected={languageSelected}
               img='zymergen.png'
-            ></Project>
-            <Project
-              languages={["java"]}
-              languageSelected={languageSelected}
-              img='asteriods.png'
-            ></Project>
-            <Project
-              languages={["java"]}
-              languageSelected={languageSelected}
-              img='bearmap.gif'
-            ></Project>
-            <Project
-              languages={["python"]}
-              languageSelected={languageSelected}
-              img='ants.png'
+              cardText='Designed and implemented a React, Django web-based tool to store and visualize plasmid maps efficiently. Stored files in AWS.'
+              cardTitle='Data Visualization'
             ></Project>
             <Project
               languages={["java"]}
               languageSelected={languageSelected}
               img='minesweeper.gif'
+              cardTitle='Minesweeper'
+              cardText='Recreated the popular puzzle game using Java'
+            ></Project>
+            <Project
+              languages={["java"]}
+              languageSelected={languageSelected}
+              img='bearmap.gif'
+              cardTitle='Bear Map (CS 61B)'
+              cardText='Rasterized images to create a map of Berkeley. Utilized A* to navigate from Point A to B'
+            ></Project>
+            <Project
+              languages={["ds", "python"]}
+              languageSelected={languageSelected}
+              img='spamham.png'
+              cardTitle='Spam Ham Classifier'
+              cardText='Visualized data and found common patterns in emails, trained and refined Logistic Regression model through cross-validation and hyperparameter tuning'
+            ></Project>
+            <Project
+              languages={["python"]}
+              languageSelected={languageSelected}
+              img='ants.png'
+              cardTitle='Ants (CS 61A)'
+              cardText='Recreated Plants vs Zombies in Python as a class project'
+            ></Project>
+            <Project
+              languages={["react", "webdev"]}
+              languageSelected={languageSelected}
+              img='vimeotab.png'
+              cardTitle='Extension for Vimeo'
+              cardText='Worked with a group of 4 as an intern side project to build a dashboard extension for Vimeo'
             ></Project>
             <Project
               languages={["java"]}
               languageSelected={languageSelected}
               img='byog.gif'
+              cardTitle='Game (CS 61B)'
+              cardText='Worked with a partner to create a 2-player game with psuedorandom game map generation, game save functionality, and keyboard controls'
             ></Project>
           </CardColumns>
         </div>

@@ -10,7 +10,7 @@
 .Main {
   display: flex;
   flex-direction: row;
-  background-image: url("../images/background.PNG");
+  background-image: url("../images/background.JPG");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -72,4 +72,43 @@
 
 .nav-link:hover {
   color: gray;
+}
+
+.Contact img {
+  width: 10%;
+}
+
+.ProjectLegend2 {
+  display: none;
+}
+
+/* For Mobile and Tablets */
+@media screen and (max-width: 1024px) {
+  .Main {
+    background-size: cover;
+  }
+  .Profile {
+    width: 100%;
+    margin: 3% 3% 5% 3%;
+  }
+  .Profile #face {
+    max-width: 20%;
+    margin: 5% auto;
+  }
+  .Contact {
+    margin: 0% 10% 5% 10%;
+    font-size: 1.25rem;
+  }
+  .Contact img {
+    width: 5%;
+  }
+  .Projects {
+    flex-direction: column;
+  }
+  .ProjectLegend {
+    display: none;
+  }
+  .ProjectLegend2 {
+    display: block;
+  }
 }
